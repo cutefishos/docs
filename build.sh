@@ -39,22 +39,8 @@ export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 # * https://www.sphinx-doc.org/en/master/usage/quickstart.html#running-the-build
 make clean
 make html
-make epub
 # sphinx-build -b html . _build
 # make -C ./docs html
-
-#####################################
-# Upload outputs to GitHub Releases #
-#####################################
-
-rm -rf ./out/ || true
-mkdir -p out
-cp _build/epub/*.epub out/
-wget "https://github.com/tcnksm/ghr/releases/download/v0.13.0/ghr_v0.13.0_linux_amd64.tar.gz"
-tar xf ghr_*.tar.gz
-GH_USER=$(echo "${GITHUB_REPOSITORY}" | cut -d "/" -f 1)
-GH_REPO=$(echo "${GITHUB_REPOSITORY}" | cut -d "/" -f 2)
-./ghr_*/ghr -delete -t "${G_TOKEN}" -u "${GH_USER}" -r "${GH_REPO}" -c "${GITHUB_SHA}" continuous out/
  
 #######################
 # Update GitHub Pages #
