@@ -41,7 +41,6 @@ make clean
 make html
 # sphinx-build -b html . _build
 # make -C ./docs html
- 
 #######################
 # Update GitHub Pages #
 #######################
