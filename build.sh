@@ -40,8 +40,6 @@ export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 make clean
 make html
 make epub
-make qthelp
-qcollectiongenerator _build/qthelp/*.qhcp
 # sphinx-build -b html . _build
 # make -C ./docs html
 
@@ -51,7 +49,7 @@ qcollectiongenerator _build/qthelp/*.qhcp
 
 rm -rf ./out/ || true
 mkdir -p out
-cp _build/qthelp/*.qhc _build/epub/*.epub out/
+cp _build/epub/*.epub out/
 wget "https://github.com/tcnksm/ghr/releases/download/v0.13.0/ghr_v0.13.0_linux_amd64.tar.gz"
 tar xf ghr_*.tar.gz
 GH_USER=$(echo "${GITHUB_REPOSITORY}" | cut -d "/" -f 1)
