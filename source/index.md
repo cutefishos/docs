@@ -1,8 +1,18 @@
-# CutefishOS's documentation 
+# CutefishOS Documentation 
 
 CutefishOS is a Linux desktop operating system that focuses on simplicity, beauty and practicality. Our goal is to provide users with a comfortable interface design, a better user experience, and meet the needs of various scenarios.
 
 ![Screenshot](_static/laptop.png)
+
+```{toctree}
+---
+maxdepth: 3
+caption: Get Involved
+hidden: true
+glob: true
+---
+getinvolved/translation
+```
 
 ```{toctree}
 ---
